@@ -5,14 +5,15 @@ console.log(rotateArr([1, 2, 3], 2));
 
 
 // Solution 2
-const isMonotone = (arr:number[] = []) => {
-  return arr.every((e, i, a) => {
-    if (i) {
-      return e > a[i - 1]
-    }
-    else {
-      return false
-    }
-  })
-}
-console.log(isMonotone([1,2,3,4]))
+
+var isMonotonic = (arr:number[] = []) => {
+  return (
+    arr.every((v, i) => i === 0 || v <= arr[i - 1]) ||
+    arr.every((v, i) => i === 0 || v >= arr[i - 1])
+  );
+};
+
+
+console.log(isMonotonic([1,2,3,4]));
+console.log(isMonotonic([10,3,4,6]));
+console.log(isMonotonic([9]));
