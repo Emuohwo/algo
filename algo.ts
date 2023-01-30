@@ -15,3 +15,4 @@ const isMonotone = (arr:number[] = []) => {
     }
   })
 }
+console.log(isMonotone([1,2,3,4]))
